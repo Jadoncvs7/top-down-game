@@ -13,18 +13,25 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisons = new List<RaycastHit2D>();
     public float collisonOffset = 0.05f;
     Animator animator;
+    private PickUp pickUp;
+    private Vector3 change;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        pickUp = gameObject.GetComponent<PickUp>();
+        pickUp.Direction = new Vector2(0, 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (change.sqrMagnitude >.1f)
+        {
+            pickUp.Direction = change.normalized;
+        }
     }
 
     private void FixedUpdate()
