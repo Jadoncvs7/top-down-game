@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerState { 
+public enum PlayerState
+{
     walk,
     attack,
     interact,
@@ -35,7 +36,7 @@ public class PlayerController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentState == PlayerState.interact)
+        if (currentState == PlayerState.interact)
         {
             return;
         }

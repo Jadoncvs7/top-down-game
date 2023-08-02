@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (change.sqrMagnitude >.1f)
+        if (change.sqrMagnitude > .1f)
         {
             pickUp.Direction = change.normalized;
         }
